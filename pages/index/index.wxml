@@ -1,0 +1,121 @@
+<!--index.wxml-->
+<view class="container">
+  <!--定位和搜索  -->
+  <!-- <view class="searchbar_fixed" style="position:{{searchbarPos != 0 ? 'fixed':'relative'}}">  -->
+  <view class="searchbar_fixed">
+    <view class="select_community">
+      <text>{{"云狐科技园"}}</text>
+      <image src='../../img/common_icon_dropdown.png'></image>
+    </view>
+    <view class="searchbox">
+      <input placeholder-class="searchbox-placeholder" placeholder="搜索你感兴趣的内容..." type="text" />
+      <icon type="search" size="20" color="#ceced0" />
+    </view>
+  </view>
+  <!--占位  -->
+  <view class="zhanwei" />
+  <!-- <view style="height: {{searchbarPos > 0 ? '102rpx':'0' }}" /> -->
+
+  <!--小区通知  -->
+  <view class='community_notice'>
+    <view class='community_notice_content'>
+      <!-- <image src="../../img/common_icon_notice.png"></image> -->
+      <button>通知</button>
+      <text>关于物业费缴纳的通知</text>
+    </view>
+    <view class='post_info'>
+      <text>9小时前 · 1111人查看 · 1111人回复</text>
+    </view>
+  </view>
+  <!--帖子  -->
+  <view>
+    <block wx:for="{{posts_list}}" wx:key>
+      <view class="post_card" index="{{index}}" id="{{item.id}}" bindtap='redictDetail'>
+        <!--用户  -->
+        <view class='userbar'>
+          <view class='userbar_left'>
+            <!--头像性别  -->
+            <view class='userbar_avatar'>
+               <image class='userbar_avatar_user' src='{{item.user_avatar}}'></image> 
+               <image class='userbar_avatar_sex' wx:if="{{item.sex == 'men'}}" src='../../img/common_icon_sex_men.png'></image> 
+               <image class='userbar_avatar_sex' wx:if="{{item.sex == 'women'}}" src='../../img/common_icon_sex_women.png'></image> 
+            </view>
+            <view class='userbar_info'>
+              <view class='userbar_info_top'>
+                <!--用户名  -->
+                <text class='userbar_info_name'>{{item.username}}</text>
+                <view class='userbar_info_sub' wx:if='{{item.user_shop}}'>
+                  <image src='../../img/common_icon_shop.png'></image>
+                </view>
+                <!--赞数  -->
+                <view class='userbar_info_sub'>
+                  <image src='../../img/common_icon_like.png'></image>
+                  <text>{{item.like_count}}</text>
+                </view>
+                <!--住址  -->
+                <view class='userbar_info_sub' wx:if='{{!item.user_shop}}'>
+                  <image src='../../img/common_icon_community.png'></image>
+                  <text>{{item.user_address}}</text>
+                </view>
+              </view>
+              <!--签名  -->
+              <view class='userbar_info_bottom'>
+                <text>{{item.user_badge}}</text>
+              </view>
+            </view>
+          </view>
+          <!--添加关注  -->
+          <view class='userbar_right'>
+            <button class='fllow_btn' wx:if="{{!item.follow}}">+关注</button>
+            <button class='fllowing_btn' wx:if="{{item.follow}}">已关注</button>
+          </view>
+        </view>
+        <!--正文  -->
+        <view class='post_content'>
+          <text space='{{true}}' decode='{{true}}'>{{item.content}}</text>
+        </view>
+        <!--配图  -->
+        <view class='post_peitu' wx:if="{{item.illustration.length > 0}}">
+          <view class='single_img' wx:if="{{item.illustration.length == 1}}">
+            <image mode='aspectFill' lazy-load src='{{item.illustration[0]}}'></image>
+          </view>
+          <!--多张图  -->
+          <view class='plural_img' wx:if="{{item.illustration.length > 1}}">
+            <image mode='aspectFill' lazy-load src='{{item.illustration[0]}}'></image>
+            <image mode='aspectFill' lazy-load src='{{item.illustration[1]}}'></image>
+            <image mode='aspectFill' lazy-load src='{{item.illustration[2]}}'></image>
+          </view>
+        </view>
+        <!--帖子信息  -->
+        <view class='post_info'>
+          <!--时间和查看量  -->
+          <view>
+            <text>{{item.time}}小时前 · {{item.viewed_num}}人查看 · </text>
+            <text wx:if="{{!item.follow_topic}}">关注该话题</text>
+            <text wx:if="{{item.follow_topic}}">取消关注该话题</text>
+          </view>
+          <!--回复者  -->
+          <view class='post_info_reply'>
+            <view class='reply_avatar_area'>
+              <image class='reply_avatar_a' src='https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=3741666737,3732592802&fm=27&gp=0.jpg'></image>
+              <image class='reply_avatar_b' src='https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1505728701116&di=0c1a37042f9a5c816d1b30877b12386c&imgtype=0&src=http%3A%2F%2Fwww.qqzhi.com%2Fuploadpic%2F2014-09-21%2F041058644.jpg'></image>
+              <image class='reply_avatar_c' src='https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=3741666737,3732592802&fm=27&gp=0.jpg'></image>
+            </view>
+            <view>等{{item.reply_num}}人回复</view>
+          </view>
+        </view>
+      </view>
+    </block>
+  </view>
+
+  <view wx:if="{{btm_loading}}">
+     
+     <button>加载中...</button>
+  </view>
+
+  <!--发布按钮  -->
+  <view class='issue_btn'>
+    <image src='../../img/common_icon_issue.png'></image>
+  </view>
+
+</view>

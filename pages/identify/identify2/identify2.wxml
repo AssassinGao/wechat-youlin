@@ -1,0 +1,41 @@
+<!--认证第二步-->
+<view>
+  <!--第二步  -->
+  <view class='idtf_second'>
+    <form bindsubmit='formSubmit'>
+      <!--小区名称  -->
+      <view class="form_item">
+        <view class='form_item_icon'>
+          <image src='../../../img/identify_icon_location.png'></image>
+        </view>
+        <view class='form_item_content'>
+          <text class="form_item_text" >滨康小区</text>
+          <input hidden name="community" value="滨康小区"></input>
+        </view>
+      </view>
+      <!--楼栋号  -->
+      <view class="form_item">
+        <view class='form_item_icon'>
+          <image src='../../../img/identify_icon_building.png'></image>
+        </view>
+        <view class='form_item_content'>
+          <picker name="building_num" class="form_item_text" value="{{building_index}}" range="{{building_num}}" bindchange="buildingPickerChange">
+            {{building_num[building_index]}}
+          </picker>
+        </view>
+      </view>
+      <!--门牌号  -->
+      <view class="form_item">
+        <view class='form_item_icon'>
+          <image src='../../../img/identify_icon_door.png'></image>
+        </view>
+        <view class='form_item_content'>
+          <picker name="door_num" class="form_item_text" range='{{door_num}}' value='{{door_index}}'  bindchange="doorPickerChange" >{{door_num[door_index]}}</picker>
+        </view>
+      </view>
+      <view class="next_step">
+        <button formType="submit">下一步</button>
+      </view>
+    </form>
+  </view>
+</view>

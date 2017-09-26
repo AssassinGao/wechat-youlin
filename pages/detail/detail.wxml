@@ -1,0 +1,252 @@
+<!--pages/detail/detail.wxml-->
+<view class='container'>
+  <!--用户信息  -->
+  <view class='detail_header'>
+    <view class='userbar'>
+      <view class='userbar_left'>
+        <!--头像性别  -->
+        <view class='userbar_avatar'>
+          <image class='userbar_avatar_user' src='https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1506591920&di=d05c79a8e6e297a624b37e91028023c1&imgtype=jpg&er=1&src=http%3A%2F%2Fww2.sinaimg.cn%2Forj480%2F423ab0c3jw1f3a2qcuik7j20x60x6q6u.jpg'></image>
+          <image class='userbar_avatar_sex' wx:if="{{1 == 1}}" src='../../img/common_icon_sex_men.png'></image>
+          <image class='userbar_avatar_sex' wx:if="{{1 == 2}}" src='../../img/common_icon_sex_women.png'></image>
+        </view>
+        <view class='userbar_info'>
+          <view class='userbar_info_top'>
+            <!--用户名  -->
+            <text class='userbar_info_name'>{{'李老鼠吱吱吱'}}</text>
+            <view class='userbar_info_sub' wx:if='{{1 == 1}}'>
+              <image src='../../img/common_icon_shop.png'></image>
+            </view>
+            <!--赞数  -->
+            <view class='userbar_info_sub'>
+              <image src='../../img/common_icon_like.png'></image>
+              <text>{{1111}}</text>
+            </view>
+            <!--住址  -->
+            <view class='userbar_info_sub' wx:if='{{1 == 2}}'>
+              <image src='../../img/common_icon_community.png'></image>
+              <text>{{post.user_address}}</text>
+            </view>
+          </view>
+          <!--签名  -->
+          <view class='userbar_info_bottom'>
+            <text>{{'车评自媒体'}}</text>
+          </view>
+        </view>
+      </view>
+      <!--添加关注  -->
+      <view class='userbar_right'>
+        <button class='fllow_btn' wx:if="{{1 == 2}}">+关注</button>
+        <button class='fllowing_btn' wx:if="{{1 == 1}}">已关注</button>
+      </view>
+    </view>
+  </view>
+  <!--帖子内容  -->
+  <view class='detail_content'>
+    <!--时间 查看数 等信息  -->
+    <view class='detail_content_info'>
+      <view class='detail_content_info_time'>
+        <text>2017-09-17 13：20 创建</text>
+      </view>
+      <view class='detail_content_info_num'>
+        <!--查看数  -->
+        <view>
+          <image src='../../img/detail_icon_view.png'></image>
+          <text>{{9999}}</text>
+        </view>
+        <!--回复数  -->
+        <view>
+          <image src='../../img/detail_icon_msg_top.png'></image>
+          <text>{{9999}}</text>
+        </view>
+        <!-- 点赞数 -->
+        <view>
+          <image src='../../img/detail_icon_like_bottom.png'></image>
+          <text>{{9999}}</text>
+        </view>
+      </view>
+    </view>
+    <!--文字  -->
+    <view class='detail_content_text'>
+      <text decode='true' space='true'>2017年的第一风口共享单车，在阿里、腾讯等巨头早已进入的情况下，仍不断有新的公司和资本进入，其中不乏上市公司的身影。
+      2017年的第一风口共享单车，在阿里、腾讯等巨头早已进入的情况下，仍不断有新的公司和资本进入，其中不乏上市公司的身影。
+      </text>
+    </view>
+    <!--插图  -->
+    <view class='detail_content_img'>
+       <image mode='widthFix' src='https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1506569226&di=6f470fa1ac04da94a46de84098468ca4&imgtype=jpg&er=1&src=http%3A%2F%2Fmozhan.b0.upaiyun.com%2Fueditor%2Fimage%2F20170301%2F1488359770866581.jpg'></image> 
+       <text>320*320</text>
+       <image mode='widthFix' src='../../pic/320_320.jpg'></image> 
+       <text>800*800</text>
+       <image mode='widthFix' src='../../pic/800_800.jpg'></image> 
+       <text>480*320</text>
+       <image mode='widthFix' src='../../pic/480_320.jpg'></image> 
+       <text>320*480</text>
+       <image mode='widthFix' src='../../pic/320_480.jpg'></image> 
+       <text>960*640</text>
+       <image mode='widthFix' src='../../pic/960_640.jpg'></image> 
+       <text>640*960</text>
+       <image mode='widthFix' src='../../pic/640_960.jpg'></image> 
+       <text>1350*2550</text>
+       <image mode='widthFix' src='../../pic/1350_2550.jpg'></image> 
+       <text>2500_1200</text>
+       <image mode='widthFix' src='../../pic/2500_.jpg'></image> 
+       <text>600*2550</text>
+       <image mode='widthFix' src='../../pic/600_2500.jpg'></image> 
+       <text>横向长图1</text>
+       <image mode='widthFix' src='../../pic/heng_chang.jpg'></image> 
+       <text>横向长图2</text>
+       <image mode='widthFix' src='../../pic/heng_chang2.jpg'></image> 
+    </view>
+    <!--分享  -->
+    <view class='detail_share'>
+      <view>
+        <image src='../../img/detail_icon_share.png'></image>
+        <text>分享</text>
+      </view>
+      <text>举报</text>
+    </view>
+  </view>
+  <!--帖子评论  -->
+  <view class='detail_comment'>
+    <view class='comment_head'>
+      <text>评论 ({{1999}})</text>
+    </view>
+    <!--评论内容  -->
+    <view class='comment_list'>
+
+      <!--评论 wx:for填数据  -->
+      <view class='comment_item'>
+        <view class='comment_userbar'>
+          <!--头像  -->
+          <image class='comment_userbar_avatar' src='https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1506583452&di=8dce2092eeb35ec5ab9f849e654687b3&imgtype=jpg&er=1&src=http%3A%2F%2Fimg1.touxiang.cn%2Fuploads%2F20131024%2F24-032316_425.jpg'></image>
+          <!--性别  -->
+          <image class='comment_userbar_sex' src='../../img/common_icon_sex_women.png'></image>
+        </view>
+
+        <view class='comment_content'>
+
+          <!--用户信息  -->
+          <view class='cmt_ctt_top'>
+            <view class='cmt_ctt_t_t'>
+              <view>用户名123</view>
+              <view class='useraddress_s'>
+                <!--判断商户还是住户  -->
+                <image src='../../img/common_icon_shop.png'></image>
+                <text wx:if="{{1 == 1}}">3-612</text>
+              </view>
+              <text >举报</text>
+            </view>
+            <view class='cmt_ctt_t_b'>
+              <text>马拉松爱好者</text>
+            </view>
+          </view>
+
+          <!--对原文的评论  还是   回复别人的评论  -->
+          <view class='cmt_ctt_middle'>
+            <!--回复帖子  -->
+            <view class='reply_author'>
+              <text>半年本钱都回来了，人工不要钱，维修不要钱？损耗不算钱。罚款不要钱？真正有有需要都是骑的人工不要钱，维修不要钱？损耗不算钱。罚款不要钱？
+              </text>
+            </view>
+            <!--回复评论  -->
+            <view class='reply_other'>
+
+            </view>
+          </view>
+
+          <!--时间  回复  赞  -->
+          <view class='cmt_ctt_bottom'>
+            <text>{{'34分钟前'}}</text>
+            
+            <view>
+              <image src='../../img/detail_icon_msg_bottom.png'></image>
+              <image src='../../img/detail_icon_like_bottom.png'></image>
+              <text>{{20}}</text>
+            </view>
+          </view>
+        </view>
+      </view>
+      <!--comment_item end  -->
+
+      <!--评论 wx:for填数据  -->
+      <view class='comment_item'>
+        <view class='comment_userbar'>
+          <!--头像  -->
+          <image class='comment_userbar_avatar' src='https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1506583452&di=8dce2092eeb35ec5ab9f849e654687b3&imgtype=jpg&er=1&src=http%3A%2F%2Fimg1.touxiang.cn%2Fuploads%2F20131024%2F24-032316_425.jpg'></image>
+          <!--性别  -->
+          <image class='comment_userbar_sex' src='../../img/common_icon_sex_women.png'></image>
+        </view>
+
+        <view class='comment_content'>
+
+          <!--用户信息  -->
+          <view class='cmt_ctt_top'>
+            <view class='cmt_ctt_t_t'>
+              <view>用户名123</view>
+              <view class='useraddress_s'>
+                <!--判断商户还是住户  -->
+                <image src='../../img/common_icon_shop.png'></image>
+                <text wx:if="{{1 == 1}}">3-612</text>
+              </view>
+              <text >举报</text>
+            </view>
+            <view class='cmt_ctt_t_b'>
+              <text>马拉松爱好者</text>
+            </view>
+          </view>
+
+          <!--对原文的评论  还是   回复别人的评论  -->
+          <view class='cmt_ctt_middle'>
+            <!--回复帖子  -->
+            <view class='reply_author' wx:if="{{1 == 2}}">
+              <text>半年本钱都回来了，人工不要钱，维修不要钱？损耗不算钱。罚款不要钱？真正有有需要都是骑的人工不要钱，维修不要钱？损耗不算钱。罚款不要钱？
+              </text>
+            </view>
+            <!--回复评论  -->
+            <view class='reply_other' wx:if="{{1 == 1}}">
+              <!--回复内容  -->
+              <view class='my_reply'>
+                <text>回复 <text>{{'堂主'}}</text>：墙都不扶，舅扶你！</text>
+              </view>
+              <!--原评论内容  -->
+              <view class='replyer_area'>
+                <view class='replyer_name'>堂主: </view>
+                <view class='replyer_content'>半年本钱都回来了，人工不要钱，维修不要钱？损耗不算钱。罚款不要钱？真正有有需要都是骑的自</view>
+              </view>
+            </view>
+          </view>
+
+          <!--时间  回复  赞  -->
+          <view class='cmt_ctt_bottom'>
+            <text>{{'34分钟前'}}</text>
+            
+            <view>
+              <image src='../../img/detail_icon_msg_bottom.png'></image>
+              <image src='{{!liked?"../../img/detail_icon_like_bottom.png":"../../img/detail_icon_like_selected.png"}}'></image>
+              <text style='color: {{liked? " #ea6068" : "#666"}}'>{{233}}</text>
+            </view>
+          </view>
+        </view>
+      </view>
+      <!--comment_item end  -->
+    </view>
+    <!--list end  -->
+  </view>
+  <!--底部固定栏  -->
+  <view class='fixbar_bottom'>
+    <view class='fixbar_btn'>
+      <image src='{{liked?"../../img/detail_icon_biglike_selected.png":"../../img/detail_icon_biglike_default.png"}}'></image>
+      <text style='color: {{liked? "#ef8833" : "#666"}}'>{{liked ? '已点赞':'点赞'}}</text>
+    </view>
+    <view class='fixbar_btn'>
+      <image src='../../img/detail_icon_bigmsg.png'></image>
+      <text>回复</text>
+    </view>
+    <view class='fixbar_btn'>
+      <image src='{{collected?"../../img/detail_icon_bigcollect_selected.png":"../../img/detail_icon_bigcollect_default.png"}}'></image>
+      <text style='color: {{collected? "#ef8833" : "#666"}}'>{{collected ? '已收藏':'收藏'}}</text>
+    </view>
+  </view>
+
+</view>

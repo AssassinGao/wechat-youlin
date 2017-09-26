@@ -1,0 +1,125 @@
+<!--pages/identify/identify.wxml-->
+<view>
+  <view class='idtf_first'>
+    <form bindsubmit="formSubmit" bindreset="formReset">
+      <!--头像  -->
+      <view class="upload_avatar">
+        <image class='upload_avatar_img'></image>
+        <image class='upload_avatar_icon'></image>
+      </view>
+      <!--昵称  -->
+      <view class="form_item">
+        <view class='form_item_icon'>
+          <image src='../../img/identify_icon_name.png'></image>
+        </view>
+        <view class='form_item_content'>
+          <view class="form_item_title">昵称(10字以内)</view>
+          <input placeholder-class='form_item_placeholder' class='form_item_text' name="nickName" placeholder="请输入昵称" />
+        </view>
+      </view>
+      <!--性别  -->
+      <view class="form_item">
+        <view class='form_item_icon'>
+          <image src='../../img/identify_icon_sex.png'></image>
+        </view>
+        <view class="form_item_content form_item_content_sex">
+          <radio-group name="sex">
+            <label>
+              <radio value="men" />男</label>
+            <label>
+              <radio value="women" />女</label>
+          </radio-group>
+        </view>
+      </view>
+      <!--介绍自己  -->
+      <view class="form_item">
+        <view class='form_item_icon'>
+          <image src='../../img/identify_icon_intro.png'></image>
+        </view>
+        <view class='form_item_content'>
+          <view class="form_item_title">向邻居介绍一下自己</view>
+          <input placeholder-class='form_item_placeholder' class='form_item_text' name="selfIntro" placeholder="比如 登山爱好者/UI设计师/红酒代理" />
+        </view>
+      </view>
+
+      <!--手机号  -->
+      <view class="form_item">
+        <view class='form_item_icon'>
+          <image src='../../img/identify_icon_tel.png'></image>
+        </view>
+        <view class='form_item_content'>
+          <view class="form_item_title">手机号</view>
+          <input placeholder-class='form_item_placeholder' class='form_item_text' name="telephone" placeholder="请输入您的手机号" />
+        </view>
+      </view>
+      <!--验证码  -->
+      <view class="form_item">
+        <view class='form_item_icon'>
+          <image src='../../img/identify_icon_CAPTCHA.png'></image>
+        </view>
+        <view class='form_item_content'>
+          <view class="form_item_title">验证码</view>
+          <input placeholder-class='form_item_placeholder' class='form_item_text' name="CAPTCHA" placeholder="请输入您的验证码" />
+        </view>
+        <view class='CAPTCHA_btn'>
+          <button>发送验证码</button>
+        </view>
+      </view>
+
+      <view class="next_step">
+        <button formType="submit">下一步</button>
+      </view>
+    </form>
+  </view>
+
+  <!--第二步  -->
+  <view class='idtf_second'>
+    <form>
+    <!--小区名称  -->
+     <view class="form_item">
+        <view class='form_item_icon'>
+          <image src='../../img/identify_icon_location.png'></image>
+        </view>
+        <view class='form_item_content'>
+          <view class="form_item_title">小区名称</view>
+          <input class="form_item_text" name="community" disabled value="滨康小区" />
+        </view>
+      </view>
+      <!--楼栋号  -->
+      <view class="form_item">
+        <view class='form_item_icon'>
+          <image src='../../img/identify_icon_building.png'></image>
+        </view>
+        <view class='form_item_content'>
+          <view class="form_item_title">楼栋号</view>
+          <picker  value="{{index}}" range="{{array}}">{{array[index]}}</picker>
+        </view>
+      </view>
+      <!--门牌号  -->
+      <view class="form_item">
+        <view class='form_item_icon'>
+          <image src='../../img/identify_icon_door.png'></image>
+        </view>
+        <view class='form_item_content'>
+          <view class="form_item_title">门牌号</view>
+          <picker></picker>
+        </view>
+      </view>
+      <view class="next_step">
+        <button formType="submit">下一步</button>
+      </view>
+    </form>
+  </view>
+
+  <!--第三步  -->
+  <view class='idtf_third'>
+    <view class='idtf_progress'>
+      <image src='../../img/identify_img_step.png'></image>
+    </view>
+    <text>认证请求已提交</text>
+    <view class='next_step'>
+      <button bindtap='backToMore'>返回</button>
+    </view>
+  </view>
+
+</view>

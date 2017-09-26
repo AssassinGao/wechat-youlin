@@ -1,0 +1,60 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  height: auto;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: PingFangSC;
+  font-size: 28rpx;
+  color: #333;
+  background-color: #f9f9f9;
+}
+
+/*重置小程序组件默认样式  */
+button{
+  padding: 0;
+}
+button::after {
+  border: 0px;
+}
+
+/*  图片默认大小 */
+
+image {
+  /* width: 35rpx; */
+  /* height: 35rpx; */
+}
+
+/*  radio选择  */
+/* 
+radio .wx-radio-input {
+  width: 22rpx;
+  height: 22rpx;
+  border: 1px solid #e6e6e6;
+  background-color: #fff;
+}
+
+radio .wx-radio-input::before {
+  width: 20rpx;
+  height: 20rpx;
+  border-radius: 50%;
+  background-color: #e6e6e6;
+}
+
+radio .wx-radio-input.wx-radio-input-checked {
+  width: 22rpx;
+  height: 22rpx;
+  color: #333;
+  background-color: #fff !important;
+  border: 1px solid #5a8bff !important;
+}
+
+radio .wx-radio-input.wx-radio-input-checked::before {
+  content: '';
+  width: 20rpx;
+  height: 20rpx;
+  border-radius: 50%;
+  background-color: #5a8bff;
+} */
+
+/*通用样式  */

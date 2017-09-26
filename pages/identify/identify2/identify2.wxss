@@ -1,0 +1,5 @@
+/* pages/identify/identify2/identify2.wxss */
+@import "../identify.wxss";
+.idtf_second{
+  padding: 54rpx 0;
+}

@@ -1,0 +1,3 @@
+#EXTM3U
+#EXT-X-STREAM-INF:PROGRAM-ID=1, BANDWIDTH=405000
+http://live.hkstv.hk.lxdns.com/live/hks/playlist.m3u8?wsSession=cb9974ac5d27effdf2e60fb5-150630662759050&wsIPSercert=d65e3c1b0819ca08cf141cec7a7bb15b&wsMonitor=-1

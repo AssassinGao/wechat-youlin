@@ -1,0 +1,11 @@
+<!--pages/more/more.wxml-->
+<view>
+  <view>
+    <view style='height:92rpx; line-height: 92rpx; text-align: center'>
+      <navigator url="/pages/identify/identify1/identify1">业主认证</navigator>
+    </view>
+    <view>
+      <button open-type='share' bindtap='shareMyApp'>分享小程序</button>
+    </view>
+  </view>
+</view>

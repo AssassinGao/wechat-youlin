@@ -1,0 +1,72 @@
+<!--认证第一步-->
+<view>
+  <view class='idtf_first'>
+    <form bindsubmit="formSubmit" bindreset="formReset">
+      <!--头像  -->
+      <view class="upload_avatar">
+        <image class='upload_avatar_img' src='https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=3741666737,3732592802&fm=27&gp=0.jpg'></image>
+        <image class='upload_avatar_camera' src='../../../img/identify_icon_camara.png'></image>
+      </view>
+      <!--昵称  -->
+      <view class="form_item">
+        <view class='form_item_icon'>
+          <image src='../../../img/identify_icon_name.png'></image>
+        </view>
+        <view class='form_item_content'>
+          <input maxlength='10' placeholder-class='form_item_placeholder' class='form_item_text' name="nickName" placeholder="请输入昵称" />
+        </view>
+      </view>
+      <!--性别  -->
+      <view class="form_item">
+        <view class='form_item_icon'>
+          <image src='../../../img/identify_icon_sex.png'></image>
+        </view>
+        <view class="form_item_content">
+          <picker name="sex" class="form_item_text" value="{{sex_index}}" range="{{sex}}" bindchange="sexPickerChange">
+            {{sex[sex_index]}}
+          </picker>
+        </view>
+      </view>
+      <!--介绍自己  -->
+      <view class="form_item">
+        <view class='form_item_icon'>
+          <image src='../../../img/identify_icon_intro.png'></image>
+        </view>
+        <view class='form_item_content'>
+           <input maxlength="20" placeholder-class='form_item_placeholder' class='form_item_text' name="selfIntro" placeholder="比如 登山爱好者/UI设计师/红酒代理" /> 
+          <!-- <textarea auto-height='true' placeholder-class='form_item_textarea_ph ' class='form_item_text form_item_textarea_ph' name="selfIntro" placeholder="比如 登山爱好者/UI设计师/红酒代理" /> -->
+          <!-- <text class='form_item_text'>比如 登山爱好者/UI设计师/红酒代理</text> -->
+        </view>
+      </view>
+
+      <!--手机号  -->
+      <view class="form_item">
+        <view class='form_item_icon'>
+          <image src='../../../img/identify_icon_tel.png'></image>
+        </view>
+        <view class='form_item_content'>
+           <input type='number' placeholder-class='form_item_placeholder' class='form_item_text' name="telephone" placeholder="请输入您的手机号" /> 
+          <!-- <text class='form_item_text'>111111111111</text> -->
+        </view>
+      </view>
+      <!--验证码  -->
+      <view class="form_item">
+        <view class='form_item_icon'>
+          <image src='../../../img/identify_icon_CAPTCHA.png'></image>
+        </view>
+        <view class='form_item_content'>
+          <input type='number' placeholder-class='form_item_placeholder' class='form_item_text' name="CAPTCHA" placeholder="请输入您的验证码" />
+        </view>
+        <view class='.form_item_icon_right'>
+          <button class='CAPTCHA_btn_default' wx:if="{{captcha_disabled == false}}" bindtap='sendCAPTCHA'>发送验证码</button>
+          <button class='CAPTCHA_btn_send' wx:if="{{captcha_disabled == true}}" disabled='{{captcha_disabled}}'>已发送({{captcha_sendtime}}s)</button>
+        </view>
+      </view>
+
+      <view class="next_step">
+        <button formType="submit">下一步</button>
+      </view>
+    </form>
+  </view>
+  <view hidden='{{true}}'>昵称或手机号为空</view>
+</view>

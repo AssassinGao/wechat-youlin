@@ -1,0 +1,13 @@
+<!--认证第三步-->
+<view>
+  <view class='idtf_third'>
+    <view class='idtf_progress'>
+      <image src='../../../img/identify_img_step.png'></image>
+    </view>
+    <text>认证请求已提交</text>
+    <view class='next_step'>
+      <button bindtap="backToMorePage">返回</button>
+    </view>
+  </view>
+
+</view>

@@ -1,0 +1,177 @@
+/* pages/identify/identify.wxss */
+
+/*上传头像  */
+
+.upload_avatar {
+  width: 190rpx;
+  height: 190rpx;
+  box-sizing: border-box;
+  border-radius: 50%;
+  margin: 40rpx auto;
+  padding: 7rpx;
+  position: relative;
+  background-color: #fbfbfb;
+}
+
+.upload_avatar_img {
+  width: 176rpx;
+  height: 176rpx;
+  border-radius: 50%;
+  background-color: lightblue;
+}
+
+.upload_avatar_camera {
+  width: 48rpx;
+  height: 48rpx;
+  position: absolute;
+  bottom: 0;
+  right: 17rpx;
+  border-radius: 50%;
+}
+
+/*表单  */
+
+.form_item {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  height: 96rpx;
+   line-height: 1; 
+  padding: 0rpx 20rpx;
+}
+
+/*表单图标  */
+
+.form_item_icon {
+  width: 38rpx;
+  height: 38rpx;
+  margin-right: 30rpx;
+}
+
+.form_item_icon>image {
+  width: 38rpx;
+  height: 38rpx;
+}
+
+.form_item_title {
+  font-size: 22rpx;
+  color: #666;
+  margin-bottom: 10rpx;
+}
+
+.form_item_content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 635rpx;
+  height: 96rpx;
+  box-sizing: border-box;
+  border-top: 1px solid #fff;
+  border-bottom: 1px solid #e5e8f1; 
+}
+
+/*textarea 高度  */
+
+.form_item_content>textarea {
+  min-height: 57rpx;
+}
+
+/*picker选项右箭头图标  */
+
+.form_item_content>picker {
+  height: 52rpx;
+  line-height: 52rpx;
+}
+
+.form_item_icon_right {
+  position: relative;
+}
+
+.form_item_icon_right>image {
+  position: absolute;
+  width: 14rpx;
+  height: 26rpx;
+  top: -22rpx;
+  right: 0rpx;
+}
+/*占位符样式  */
+.form_item_placeholder {
+  min-height: 26rpx;
+  font-size: 28rpx;
+  line-height: 1.5;
+  color: #ccc;
+}
+
+.form_item_text {
+  min-height: 26rpx;
+  font-size: 28rpx;
+  line-height: 1.5;
+  color: #333;
+}
+
+/*验证码按钮  */
+
+.CAPTCHA_btn_default {
+  width: 180rpx;
+  height: 58rpx;
+  line-height: 55rpx;
+  color: #5a8bff;
+  font-size: 26rpx;
+  border-radius: 10rpx;
+  background-color: #fff;
+  border: solid 1px #5a8bff;
+  position: absolute;
+  right: 0rpx;
+  bottom: -26rpx;
+  z-index: 10
+}
+
+.CAPTCHA_btn_send {
+  position: absolute;
+  right: 0rpx;
+  bottom: -26rpx;
+  width: 180rpx;
+  height: 58rpx;
+  line-height: 55rpx;
+  font-size: 26rpx;
+  color: #fff;
+  border-radius: 10rpx;
+  border: solid 1px #e8e8e8;
+  background-color: #e8e8e8;
+  z-index: 10;
+}
+
+/*下一步  */
+
+.next_step {
+  margin-top: 60rpx;
+}
+
+.next_step>button {
+  width: 690rpx;
+  height: 88rpx;
+  color: #fff;
+  border-radius: 10rpx;
+  background-color: #5a8bff;
+  box-shadow: 0px 4rpx 10rpx 2rpx rgba(90, 139, 255, 0.5);
+}
+
+.idtf_third {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.idtf_progress>image {
+  width: 622rpx;
+  height: 114rpx;
+  margin: 106rpx auto 120rpx;
+}
+
+.idtf_third>text {
+  font-size: 32rpx;
+  line-height: 1.31;
+  color: #666;
+  margin-bottom: 36rpx;
+}

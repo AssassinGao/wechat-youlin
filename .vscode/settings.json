@@ -1,0 +1,7 @@
+{
+    "files.associations": {
+        "*.jsx": "javascriptreact",
+        "*.wxml": "html",
+        "*.wxss": "css"
+    }
+}
